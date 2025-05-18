@@ -1,11 +1,14 @@
 {
-  "name": "hooks",
+  "name": "i18n",
   "packageManager": "yarn@4.9.1",
+  "version": "1.0.0",
   "private": true,
   "main": "src/index.ts",
   "types": "src/index.ts",
   "dependencies": {
-    "react": "^19.0.0",
+    "i18next": "^23.7.11",
+    "react": "19.0.0",
+    "react-i18next": "^14.0.0",
     "react-native": "0.79.2"
   },
   "devDependencies": {

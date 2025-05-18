@@ -7,12 +7,15 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "install-pods": "cd ios && pod install"
   },
   "dependencies": {
     "components": "workspace:^",
+    "i18n": "workspace:^",
     "react": "19.0.0",
-    "react-native": "0.79.2"
+    "react-native": "0.79.2",
+    "theme": "workspace:^"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

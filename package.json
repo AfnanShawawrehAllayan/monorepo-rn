@@ -4,5 +4,19 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "scripts": {
+    "chatApp:run-android": "yarn workspace chatApp run android",
+    "chatApp:run-ios": "yarn workspace chatApp run ios",
+    "chatApp:test": "yarn workspace chatApp test",
+    "chatApp:start": "yarn workspace chatApp start --reset-cache",
+    "chatApp:install-dependencies": "yarn workspace chatApp install",
+    "chatApp:install-pods": "yarn workspace chatApp install-pods",
+    "socialMediaApp:run-android": "yarn workspace socialMediaApp run android",
+    "socialMediaApp:run-ios": "yarn workspace socialMediaApp run ios",
+    "socialMediaApp:test": "yarn workspace socialMediaApp test",
+    "socialMediaApp:start": "yarn workspace socialMediaApp start --reset-cache",
+    "socialMediaApp:install-dependencies": "yarn workspace socialMediaApp install",
+    "socialMediaApp:install-pods": "yarn workspace socialMediaApp install-pods"
+  }
 }
