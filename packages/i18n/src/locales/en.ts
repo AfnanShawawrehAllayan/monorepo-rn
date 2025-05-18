@@ -16,6 +16,9 @@ export default {
     logout: 'Logout',
     login: 'Login',
     signup: 'Sign Up',
+    notice: 'Notice',
+    restartRequired: 'Please restart the app for the language changes to take effect.',
+    ok: 'OK',
   },
   auth: {
     email: 'Email',
@@ -57,6 +60,9 @@ export default {
   errors: {
     generic: 'Something went wrong. Please try again.',
     network: 'Network error. Please check your connection.',
+    loadLanguage: 'Error loading saved language:',
+    changeLanguage: 'Error changing language:',
+    restartRequired: 'Please restart the app to apply language changes',
     auth: {
       invalidCredentials: 'Invalid email or password.',
       emailAlreadyInUse: 'This email is already in use.',

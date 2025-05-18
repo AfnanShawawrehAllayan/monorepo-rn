@@ -1,3 +1,8 @@
+import '@formatjs/intl-locale/polyfill';
+import '@formatjs/intl-pluralrules/polyfill';
+import '@formatjs/intl-pluralrules/locale-data/en';
+import '@formatjs/intl-pluralrules/locale-data/ar';
+
 import i18next from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
