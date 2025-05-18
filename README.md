@@ -36,7 +36,7 @@ monorepo-rn/
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/AfnanShawawrehAllayan/monorepo-rn.git
    cd monorepo-rn
    ```
 
