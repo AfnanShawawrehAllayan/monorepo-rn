@@ -131,7 +131,7 @@ const typography = {
 // Create the theme object
 export const createTheme = (mode: 'light' | 'dark') => {
   const isDark = mode === 'dark';
-  
+
   return {
     mode,
     colors: {
@@ -139,40 +139,40 @@ export const createTheme = (mode: 'light' | 'dark') => {
       primary: palette.blue[500],
       primaryLight: palette.blue[300],
       primaryDark: palette.blue[700],
-      
+
       secondary: palette.teal[500],
       secondaryLight: palette.teal[300],
       secondaryDark: palette.teal[700],
-      
+
       accent: palette.orange[500],
       accentLight: palette.orange[300],
       accentDark: palette.orange[700],
-      
+
       // Status colors
       success: palette.success[500],
       warning: palette.warning[500],
       error: palette.error[500],
       info: palette.info[500],
-      
+
       // Background colors
       background: isDark ? palette.gray[900] : palette.white,
       surface: isDark ? palette.gray[800] : palette.white,
       card: isDark ? palette.gray[800] : palette.white,
-      
+
       // Text colors
       text: isDark ? palette.gray[100] : palette.gray[900],
       textSecondary: isDark ? palette.gray[400] : palette.gray[600],
       textDisabled: isDark ? palette.gray[600] : palette.gray[400],
       textOnPrimary: palette.white,
       textOnSecondary: palette.white,
-      
+
       // Border and divider
       border: isDark ? palette.gray[700] : palette.gray[300],
       divider: isDark ? palette.gray[700] : palette.gray[300],
-      
+
       // Status
       disabled: isDark ? palette.gray[700] : palette.gray[300],
-      
+
       // Utility
       backdrop: 'rgba(0, 0, 0, 0.5)',
       shadow: isDark ? palette.black : palette.gray[500],

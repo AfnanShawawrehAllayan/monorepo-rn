@@ -1,14 +1,13 @@
 import React from 'react';
-import { 
-  TouchableOpacity, 
-  Text, 
-  StyleSheet, 
+import {
+  TouchableOpacity,
+  Text,
+  StyleSheet,
   TouchableOpacityProps,
   ActivityIndicator,
   ViewStyle,
   TextStyle,
 } from 'react-native';
-
 import { useTheme } from 'theme';
 
 export interface ButtonProps extends TouchableOpacityProps {
@@ -21,6 +20,7 @@ export interface ButtonProps extends TouchableOpacityProps {
   textStyle?: TextStyle;
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
+  testID?: string;
 }
 
 export const Button = ({
@@ -33,13 +33,14 @@ export const Button = ({
   textStyle,
   leftIcon,
   rightIcon,
+  testID,
   ...rest
-}: ButtonProps) => {
+}: ButtonProps): React.ReactElement => {
   const { colors, spacing } = useTheme();
-  
+
   const getBackgroundColor = () => {
     if (disabled) return colors.disabled;
-    
+
     switch (variant) {
       case 'primary':
         return colors.primary;
@@ -52,10 +53,10 @@ export const Button = ({
         return colors.primary;
     }
   };
-  
+
   const getTextColor = () => {
     if (disabled) return colors.textDisabled;
-    
+
     switch (variant) {
       case 'primary':
       case 'secondary':
@@ -68,12 +69,12 @@ export const Button = ({
         return colors.textOnPrimary;
     }
   };
-  
+
   const getBorderColor = () => {
     if (disabled) return colors.disabled;
     return variant === 'outline' ? colors.primary : 'transparent';
   };
-  
+
   const getPadding = () => {
     switch (size) {
       case 'small':
@@ -86,45 +87,40 @@ export const Button = ({
         return spacing.m;
     }
   };
-  
+
   const styles = StyleSheet.create({
     button: {
+      alignItems: 'center',
       backgroundColor: getBackgroundColor(),
+      borderColor: getBorderColor(),
       borderRadius: 8,
       borderWidth: variant === 'outline' ? 1 : 0,
-      borderColor: getBorderColor(),
-      paddingVertical: getPadding(),
-      paddingHorizontal: getPadding() * 2,
-      alignItems: 'center',
-      justifyContent: 'center',
       flexDirection: 'row',
+      justifyContent: 'center',
+      paddingHorizontal: getPadding() * 2,
+      paddingVertical: getPadding(),
     },
     text: {
       color: getTextColor(),
-      fontWeight: '600',
       fontSize: size === 'small' ? 14 : size === 'medium' ? 16 : 18,
-    },
-    icon: {
-      marginRight: 8,
-    },
-    rightIcon: {
-      marginLeft: 8,
+      fontWeight: '600',
     },
   });
 
   return (
-    <TouchableOpacity
-      style={[styles.button, style]}
-      disabled={disabled || loading}
+    <TouchableOpacity 
+      style={[styles.button, style]} 
+      disabled={disabled || loading} 
+      testID={testID}
       {...rest}
     >
       {loading ? (
         <ActivityIndicator color={getTextColor()} />
       ) : (
         <>
-          {leftIcon && leftIcon}
+          {leftIcon}
           <Text style={[styles.text, textStyle]}>{title}</Text>
-          {rightIcon && rightIcon}
+          {rightIcon}
         </>
       )}
     </TouchableOpacity>

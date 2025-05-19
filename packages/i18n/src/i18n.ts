@@ -34,19 +34,17 @@ export const languageConfig = {
 export const defaultLanguage = 'en';
 
 export const initI18n = () => {
-  i18next
-    .use(initReactI18next)
-    .init({
-      resources,
-      lng: defaultLanguage,
-      fallbackLng: defaultLanguage,
-      interpolation: {
-        escapeValue: false,
-      },
-      react: {
-        useSuspense: false,
-      },
-    });
+  i18next.use(initReactI18next).init({
+    resources,
+    lng: defaultLanguage,
+    fallbackLng: defaultLanguage,
+    interpolation: {
+      escapeValue: false,
+    },
+    react: {
+      useSuspense: false,
+    },
+  });
 
   return i18next;
 };

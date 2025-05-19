@@ -1,6 +1,7 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useCallback } from 'react';
 import { I18nManager, DevSettings } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+
 import { useI18n } from './useI18n';
 
 const LANGUAGE_STORAGE_KEY = '@app_language';
@@ -26,30 +27,33 @@ export const useLanguage = () => {
     }
   }, [t]);
 
-  const changeLanguage = useCallback(async (newLanguage: LanguageCode) => {
-    try {
-      if (language === newLanguage) return;
+  const changeLanguage = useCallback(
+    async (newLanguage: LanguageCode) => {
+      try {
+        if (language === newLanguage) return;
 
-      await AsyncStorage.setItem(LANGUAGE_STORAGE_KEY, newLanguage);
+        await AsyncStorage.setItem(LANGUAGE_STORAGE_KEY, newLanguage);
 
-      const shouldBeRTL = isRTL(newLanguage);
+        const shouldBeRTL = isRTL(newLanguage);
 
-      if (I18nManager.isRTL !== shouldBeRTL) {
-        I18nManager.allowRTL(shouldBeRTL);
-        I18nManager.forceRTL(shouldBeRTL);
+        if (I18nManager.isRTL !== shouldBeRTL) {
+          I18nManager.allowRTL(shouldBeRTL);
+          I18nManager.forceRTL(shouldBeRTL);
 
-        if (__DEV__) {
-          DevSettings.reload();
-        } else {
-          console.warn(t('errors.restartRequired'));
+          if (__DEV__) {
+            DevSettings.reload();
+          } else {
+            console.warn(t('errors.restartRequired'));
+          }
         }
-      }
 
-      await setLanguage(newLanguage);
-    } catch (error) {
-      console.error(t('errors.changeLanguage'), error);
-    }
-  }, [language, setLanguage, t]);
+        await setLanguage(newLanguage);
+      } catch (error) {
+        console.error(t('errors.changeLanguage'), error);
+      }
+    },
+    [language, setLanguage, t],
+  );
 
   return {
     language,

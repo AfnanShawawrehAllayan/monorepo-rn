@@ -1,0 +1,515 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Component applies custom style: Button component - with custom style 1`] = `
+<TouchableOpacity
+  disabled={false}
+  style={
+    [
+      {
+        "alignItems": "center",
+        "backgroundColor": "#007AFF",
+        "borderColor": "transparent",
+        "borderRadius": 8,
+        "borderWidth": 0,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "paddingHorizontal": 32,
+        "paddingVertical": 16,
+      },
+      {
+        "backgroundColor": "red",
+      },
+    ]
+  }
+  testID="button"
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#FFFFFF",
+          "fontSize": 16,
+          "fontWeight": "600",
+        },
+        undefined,
+      ]
+    }
+  >
+    Press Me
+  </Text>
+</TouchableOpacity>
+`;
+
+exports[`Button Component applies custom text style: Button component - with custom text style 1`] = `
+<TouchableOpacity
+  disabled={false}
+  style={
+    [
+      {
+        "alignItems": "center",
+        "backgroundColor": "#007AFF",
+        "borderColor": "transparent",
+        "borderRadius": 8,
+        "borderWidth": 0,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "paddingHorizontal": 32,
+        "paddingVertical": 16,
+      },
+      undefined,
+    ]
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#FFFFFF",
+          "fontSize": 16,
+          "fontWeight": "600",
+        },
+        {
+          "color": "blue",
+          "fontSize": 20,
+        },
+      ]
+    }
+  >
+    Press Me
+  </Text>
+</TouchableOpacity>
+`;
+
+exports[`Button Component calls onPress when pressed: Button component - with onPress handler 1`] = `
+<TouchableOpacity
+  disabled={false}
+  onPress={
+    [MockFunction] {
+      "calls": [
+        [],
+      ],
+      "results": [
+        {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  style={
+    [
+      {
+        "alignItems": "center",
+        "backgroundColor": "#007AFF",
+        "borderColor": "transparent",
+        "borderRadius": 8,
+        "borderWidth": 0,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "paddingHorizontal": 32,
+        "paddingVertical": 16,
+      },
+      undefined,
+    ]
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#FFFFFF",
+          "fontSize": 16,
+          "fontWeight": "600",
+        },
+        undefined,
+      ]
+    }
+  >
+    Press Me
+  </Text>
+</TouchableOpacity>
+`;
+
+exports[`Button Component renders correctly when disabled: Button component - disabled state 1`] = `
+<TouchableOpacity
+  disabled={true}
+  style={
+    [
+      {
+        "alignItems": "center",
+        "backgroundColor": "#A9A9A9",
+        "borderColor": "#A9A9A9",
+        "borderRadius": 8,
+        "borderWidth": 0,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "paddingHorizontal": 32,
+        "paddingVertical": 16,
+      },
+      undefined,
+    ]
+  }
+  testID="button"
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#808080",
+          "fontSize": 16,
+          "fontWeight": "600",
+        },
+        undefined,
+      ]
+    }
+  >
+    Press Me
+  </Text>
+</TouchableOpacity>
+`;
+
+exports[`Button Component renders correctly with default props: Button component - default props 1`] = `
+<TouchableOpacity
+  disabled={false}
+  style={
+    [
+      {
+        "alignItems": "center",
+        "backgroundColor": "#007AFF",
+        "borderColor": "transparent",
+        "borderRadius": 8,
+        "borderWidth": 0,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "paddingHorizontal": 32,
+        "paddingVertical": 16,
+      },
+      undefined,
+    ]
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#FFFFFF",
+          "fontSize": 16,
+          "fontWeight": "600",
+        },
+        undefined,
+      ]
+    }
+  >
+    Press Me
+  </Text>
+</TouchableOpacity>
+`;
+
+exports[`Button Component renders with different sizes: Button component - large size 1`] = `
+<TouchableOpacity
+  disabled={false}
+  style={
+    [
+      {
+        "alignItems": "center",
+        "backgroundColor": "#007AFF",
+        "borderColor": "transparent",
+        "borderRadius": 8,
+        "borderWidth": 0,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "paddingHorizontal": 48,
+        "paddingVertical": 24,
+      },
+      undefined,
+    ]
+  }
+  testID="button-large"
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#FFFFFF",
+          "fontSize": 18,
+          "fontWeight": "600",
+        },
+        undefined,
+      ]
+    }
+  >
+    Press Me
+  </Text>
+</TouchableOpacity>
+`;
+
+exports[`Button Component renders with different sizes: Button component - medium size 1`] = `
+<TouchableOpacity
+  disabled={false}
+  style={
+    [
+      {
+        "alignItems": "center",
+        "backgroundColor": "#007AFF",
+        "borderColor": "transparent",
+        "borderRadius": 8,
+        "borderWidth": 0,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "paddingHorizontal": 32,
+        "paddingVertical": 16,
+      },
+      undefined,
+    ]
+  }
+  testID="button-medium"
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#FFFFFF",
+          "fontSize": 16,
+          "fontWeight": "600",
+        },
+        undefined,
+      ]
+    }
+  >
+    Press Me
+  </Text>
+</TouchableOpacity>
+`;
+
+exports[`Button Component renders with different sizes: Button component - small size 1`] = `
+<TouchableOpacity
+  disabled={false}
+  style={
+    [
+      {
+        "alignItems": "center",
+        "backgroundColor": "#007AFF",
+        "borderColor": "transparent",
+        "borderRadius": 8,
+        "borderWidth": 0,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "paddingHorizontal": 16,
+        "paddingVertical": 8,
+      },
+      undefined,
+    ]
+  }
+  testID="button-small"
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#FFFFFF",
+          "fontSize": 14,
+          "fontWeight": "600",
+        },
+        undefined,
+      ]
+    }
+  >
+    Press Me
+  </Text>
+</TouchableOpacity>
+`;
+
+exports[`Button Component renders with different variants: Button component - outline variant 1`] = `
+<TouchableOpacity
+  disabled={false}
+  style={
+    [
+      {
+        "alignItems": "center",
+        "backgroundColor": "transparent",
+        "borderColor": "#007AFF",
+        "borderRadius": 8,
+        "borderWidth": 1,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "paddingHorizontal": 32,
+        "paddingVertical": 16,
+      },
+      undefined,
+    ]
+  }
+  testID="button-outline"
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#007AFF",
+          "fontSize": 16,
+          "fontWeight": "600",
+        },
+        undefined,
+      ]
+    }
+  >
+    Press Me
+  </Text>
+</TouchableOpacity>
+`;
+
+exports[`Button Component renders with different variants: Button component - primary variant 1`] = `
+<TouchableOpacity
+  disabled={false}
+  style={
+    [
+      {
+        "alignItems": "center",
+        "backgroundColor": "#007AFF",
+        "borderColor": "transparent",
+        "borderRadius": 8,
+        "borderWidth": 0,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "paddingHorizontal": 32,
+        "paddingVertical": 16,
+      },
+      undefined,
+    ]
+  }
+  testID="button-primary"
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#FFFFFF",
+          "fontSize": 16,
+          "fontWeight": "600",
+        },
+        undefined,
+      ]
+    }
+  >
+    Press Me
+  </Text>
+</TouchableOpacity>
+`;
+
+exports[`Button Component renders with different variants: Button component - secondary variant 1`] = `
+<TouchableOpacity
+  disabled={false}
+  style={
+    [
+      {
+        "alignItems": "center",
+        "backgroundColor": "#5856D6",
+        "borderColor": "transparent",
+        "borderRadius": 8,
+        "borderWidth": 0,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "paddingHorizontal": 32,
+        "paddingVertical": 16,
+      },
+      undefined,
+    ]
+  }
+  testID="button-secondary"
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#FFFFFF",
+          "fontSize": 16,
+          "fontWeight": "600",
+        },
+        undefined,
+      ]
+    }
+  >
+    Press Me
+  </Text>
+</TouchableOpacity>
+`;
+
+exports[`Button Component renders with different variants: Button component - text variant 1`] = `
+<TouchableOpacity
+  disabled={false}
+  style={
+    [
+      {
+        "alignItems": "center",
+        "backgroundColor": "transparent",
+        "borderColor": "transparent",
+        "borderRadius": 8,
+        "borderWidth": 0,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "paddingHorizontal": 32,
+        "paddingVertical": 16,
+      },
+      undefined,
+    ]
+  }
+  testID="button-text"
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#007AFF",
+          "fontSize": 16,
+          "fontWeight": "600",
+        },
+        undefined,
+      ]
+    }
+  >
+    Press Me
+  </Text>
+</TouchableOpacity>
+`;
+
+exports[`Button Component renders with left and right icons: Button component - with icons 1`] = `
+<TouchableOpacity
+  disabled={false}
+  style={
+    [
+      {
+        "alignItems": "center",
+        "backgroundColor": "#007AFF",
+        "borderColor": "transparent",
+        "borderRadius": 8,
+        "borderWidth": 0,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "paddingHorizontal": 32,
+        "paddingVertical": 16,
+      },
+      undefined,
+    ]
+  }
+>
+  <Text>
+    icon
+  </Text>
+  <Text
+    style={
+      [
+        {
+          "color": "#FFFFFF",
+          "fontSize": 16,
+          "fontWeight": "600",
+        },
+        undefined,
+      ]
+    }
+  >
+    Press Me
+  </Text>
+  <Text>
+    icon
+  </Text>
+</TouchableOpacity>
+`;

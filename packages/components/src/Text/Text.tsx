@@ -6,7 +6,18 @@ export interface TextProps extends RNTextProps {
   variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'body1' | 'body2' | 'caption' | 'button';
   color?: string;
   align?: 'auto' | 'left' | 'right' | 'center' | 'justify';
-  weight?: 'normal' | 'bold' | '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900';
+  weight?:
+    | 'normal'
+    | 'bold'
+    | '100'
+    | '200'
+    | '300'
+    | '400'
+    | '500'
+    | '600'
+    | '700'
+    | '800'
+    | '900';
 }
 
 export const Text = ({
@@ -19,7 +30,7 @@ export const Text = ({
   ...rest
 }: TextProps) => {
   const { colors, typography } = useTheme();
-  
+
   const getFontSize = () => {
     switch (variant) {
       case 'h1':
@@ -46,7 +57,7 @@ export const Text = ({
         return typography.fontSize.body1;
     }
   };
-  
+
   const getLineHeight = () => {
     switch (variant) {
       case 'h1':
@@ -60,13 +71,13 @@ export const Text = ({
         return getFontSize() * 1.5; // 150% for body text
     }
   };
-  
+
   const styles = StyleSheet.create({
     text: {
       color: color || colors.text,
       fontSize: getFontSize(),
-      lineHeight: getLineHeight(),
       fontWeight: weight || (variant.startsWith('h') ? 'bold' : 'normal'),
+      lineHeight: getLineHeight(),
       textAlign: align,
     },
   });

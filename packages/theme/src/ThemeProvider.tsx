@@ -28,7 +28,11 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
 }) => {
   const colorScheme = useColorScheme();
   const [themeMode, setThemeMode] = useState<'light' | 'dark'>(
-    defaultTheme === 'system' ? (colorScheme === 'dark' ? 'dark' : 'light') : (defaultTheme as 'light' | 'dark')
+    defaultTheme === 'system'
+      ? colorScheme === 'dark'
+        ? 'dark'
+        : 'light'
+      : (defaultTheme as 'light' | 'dark'),
   );
 
   useEffect(() => {

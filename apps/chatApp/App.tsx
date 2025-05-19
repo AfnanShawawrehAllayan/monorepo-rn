@@ -1,22 +1,22 @@
 import { Button } from 'components';
+import { I18nProvider, useI18n, useLanguage } from 'i18n';
 import React, { useEffect } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import { ThemeProvider } from 'theme';
-import { I18nProvider, useI18n, useLanguage } from 'i18n';
 
 const LanguageSelector = () => {
   const { language, changeLanguage } = useLanguage();
-  
+
   return (
     <View style={styles.languageContainer}>
-      <Button 
+      <Button
         title="English"
         variant={language === 'en' ? 'primary' : 'outline'}
         size="small"
         onPress={() => changeLanguage('en')}
       />
       <View style={styles.buttonSpacer} />
-      <Button 
+      <Button
         title="العربية"
         variant={language === 'ar' ? 'primary' : 'outline'}
         size="small"
@@ -33,39 +33,36 @@ const AppContent = () => {
   useEffect(() => {
     loadSavedLanguage();
   }, [loadSavedLanguage]);
-  
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{t('common.appName')}</Text>
       <LanguageSelector />
-      <Button 
-        title={t('settings.language.title')} 
-        variant="secondary"
-      />
+      <Button title={t('settings.language.title')} variant="secondary" />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  buttonSpacer: {
+    width: 12,
+  },
   container: {
+    alignItems: 'flex-end',
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'flex-end',
     paddingHorizontal: 16,
+  },
+  languageContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginBottom: 24,
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 32,
     textAlign: 'right',
-  },
-  languageContainer: {
-    flexDirection: 'row',
-    marginBottom: 24,
-    justifyContent: 'center',
-  },
-  buttonSpacer: {
-    width: 12,
   },
 });
 

@@ -1,5 +1,8 @@
 const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
-const { getMetroTools, getMetroAndroidAssetsResolutionFix } = require('react-native-monorepo-tools');
+const {
+  getMetroTools,
+  getMetroAndroidAssetsResolutionFix,
+} = require('react-native-monorepo-tools');
 
 const monorepoMetroTools = getMetroTools();
 const androidAssetsResolutionFix = getMetroAndroidAssetsResolutionFix();
@@ -15,7 +18,7 @@ const config = {
     publicPath: androidAssetsResolutionFix.publicPath,
   },
   server: {
-    enhanceMiddleware: (middleware) => {
+    enhanceMiddleware: middleware => {
       return androidAssetsResolutionFix.applyMiddleware(middleware);
     },
   },

@@ -18,7 +18,7 @@ export const RTLProvider: React.FC<RTLProviderProps> = ({ children, isRTL }) => 
   useEffect(() => {
     if (I18nManager.isRTL !== isRTL) {
       I18nManager.forceRTL(isRTL);
-      
+
       // On iOS, we need to reload the app for RTL changes to take effect
       if (Platform.OS === 'ios') {
         // In a real app, you might want to show a modal asking the user to restart
@@ -28,9 +28,5 @@ export const RTLProvider: React.FC<RTLProviderProps> = ({ children, isRTL }) => 
     }
   }, [isRTL]);
 
-  return (
-    <RTLContext.Provider value={{ isRTL }}>
-      {children}
-    </RTLContext.Provider>
-  );
+  return <RTLContext.Provider value={{ isRTL }}>{children}</RTLContext.Provider>;
 };
