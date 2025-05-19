@@ -1,0 +1,409 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input Component applies custom styles 1`] = `
+<View
+  style={
+    [
+      {
+        "marginBottom": 16,
+        "width": "100%",
+      },
+      {
+        "marginTop": 20,
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#000000",
+          "fontSize": 14,
+          "fontWeight": "normal",
+          "lineHeight": 21,
+          "textAlign": undefined,
+        },
+        [
+          {
+            "marginBottom": 6,
+          },
+          {
+            "color": "#FF3B30",
+          },
+          {
+            "fontSize": 16,
+          },
+        ],
+      ]
+    }
+  >
+    Custom Input
+  </Text>
+  <View
+    style={
+      [
+        {
+          "alignItems": "center",
+          "borderRadius": 8,
+          "borderWidth": 1,
+          "flexDirection": "row",
+          "overflow": "hidden",
+        },
+        {
+          "backgroundColor": "#F5F5F5",
+          "borderColor": "#FF3B30",
+        },
+      ]
+    }
+  >
+    <TextInput
+      onBlur={[Function]}
+      onFocus={[Function]}
+      placeholder="Enter text"
+      placeholderTextColor="#666666"
+      style={
+        [
+          {
+            "flex": 1,
+            "fontSize": 16,
+            "height": 48,
+            "paddingVertical": 8,
+          },
+          {
+            "color": "#000000",
+            "paddingLeft": 12,
+            "paddingRight": 12,
+          },
+          {
+            "fontSize": 18,
+          },
+        ]
+      }
+      testID="custom-input"
+    />
+  </View>
+  <Text
+    style={
+      [
+        {
+          "color": "#000000",
+          "fontSize": 12,
+          "fontWeight": "normal",
+          "lineHeight": 18,
+          "textAlign": undefined,
+        },
+        [
+          {
+            "marginTop": 4,
+          },
+          {
+            "color": "#FF3B30",
+          },
+          {
+            "fontSize": 12,
+          },
+        ],
+      ]
+    }
+  >
+    Error message
+  </Text>
+</View>
+`;
+
+exports[`Input Component renders correctly with default props 1`] = `
+<View
+  style={
+    [
+      {
+        "marginBottom": 16,
+        "width": "100%",
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      [
+        {
+          "alignItems": "center",
+          "borderRadius": 8,
+          "borderWidth": 1,
+          "flexDirection": "row",
+          "overflow": "hidden",
+        },
+        {
+          "backgroundColor": "#F5F5F5",
+          "borderColor": "#E0E0E0",
+        },
+      ]
+    }
+  >
+    <TextInput
+      onBlur={[Function]}
+      onFocus={[Function]}
+      placeholder="Enter text"
+      placeholderTextColor="#666666"
+      style={
+        [
+          {
+            "flex": 1,
+            "fontSize": 16,
+            "height": 48,
+            "paddingVertical": 8,
+          },
+          {
+            "color": "#000000",
+            "paddingLeft": 12,
+            "paddingRight": 12,
+          },
+          undefined,
+        ]
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`Input Component renders with label 1`] = `
+<View
+  style={
+    [
+      {
+        "marginBottom": 16,
+        "width": "100%",
+      },
+      undefined,
+    ]
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "#000000",
+          "fontSize": 14,
+          "fontWeight": "normal",
+          "lineHeight": 21,
+          "textAlign": undefined,
+        },
+        [
+          {
+            "marginBottom": 6,
+          },
+          {
+            "color": "#000000",
+          },
+          undefined,
+        ],
+      ]
+    }
+  >
+    Username
+  </Text>
+  <View
+    style={
+      [
+        {
+          "alignItems": "center",
+          "borderRadius": 8,
+          "borderWidth": 1,
+          "flexDirection": "row",
+          "overflow": "hidden",
+        },
+        {
+          "backgroundColor": "#F5F5F5",
+          "borderColor": "#E0E0E0",
+        },
+      ]
+    }
+  >
+    <TextInput
+      onBlur={[Function]}
+      onFocus={[Function]}
+      placeholder="Enter username"
+      placeholderTextColor="#666666"
+      style={
+        [
+          {
+            "flex": 1,
+            "fontSize": 16,
+            "height": 48,
+            "paddingVertical": 8,
+          },
+          {
+            "color": "#000000",
+            "paddingLeft": 12,
+            "paddingRight": 12,
+          },
+          undefined,
+        ]
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`Input Component renders with left and right icons 1`] = `
+<View
+  style={
+    [
+      {
+        "marginBottom": 16,
+        "width": "100%",
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      [
+        {
+          "alignItems": "center",
+          "borderRadius": 8,
+          "borderWidth": 1,
+          "flexDirection": "row",
+          "overflow": "hidden",
+        },
+        {
+          "backgroundColor": "#F5F5F5",
+          "borderColor": "#E0E0E0",
+        },
+      ]
+    }
+  >
+    <TouchableOpacity
+      disabled={true}
+      style={
+        {
+          "alignItems": "center",
+          "justifyContent": "center",
+          "padding": 12,
+        }
+      }
+    >
+      <View
+        testID="left-icon"
+      />
+    </TouchableOpacity>
+    <TextInput
+      onBlur={[Function]}
+      onFocus={[Function]}
+      placeholder="Enter text"
+      placeholderTextColor="#666666"
+      style={
+        [
+          {
+            "flex": 1,
+            "fontSize": 16,
+            "height": 48,
+            "paddingVertical": 8,
+          },
+          {
+            "color": "#000000",
+            "paddingLeft": 0,
+            "paddingRight": 0,
+          },
+          undefined,
+        ]
+      }
+    />
+    <TouchableOpacity
+      disabled={true}
+      style={
+        {
+          "alignItems": "center",
+          "justifyContent": "center",
+          "padding": 12,
+        }
+      }
+    >
+      <View
+        testID="right-icon"
+      />
+    </TouchableOpacity>
+  </View>
+</View>
+`;
+
+exports[`Input Component shows error message when provided 1`] = `
+<View
+  style={
+    [
+      {
+        "marginBottom": 16,
+        "width": "100%",
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      [
+        {
+          "alignItems": "center",
+          "borderRadius": 8,
+          "borderWidth": 1,
+          "flexDirection": "row",
+          "overflow": "hidden",
+        },
+        {
+          "backgroundColor": "#F5F5F5",
+          "borderColor": "#FF3B30",
+        },
+      ]
+    }
+  >
+    <TextInput
+      onBlur={[Function]}
+      onFocus={[Function]}
+      placeholder="Enter text"
+      placeholderTextColor="#666666"
+      style={
+        [
+          {
+            "flex": 1,
+            "fontSize": 16,
+            "height": 48,
+            "paddingVertical": 8,
+          },
+          {
+            "color": "#000000",
+            "paddingLeft": 12,
+            "paddingRight": 12,
+          },
+          undefined,
+        ]
+      }
+    />
+  </View>
+  <Text
+    style={
+      [
+        {
+          "color": "#000000",
+          "fontSize": 12,
+          "fontWeight": "normal",
+          "lineHeight": 18,
+          "textAlign": undefined,
+        },
+        [
+          {
+            "marginTop": 4,
+          },
+          {
+            "color": "#FF3B30",
+          },
+          undefined,
+        ],
+      ]
+    }
+  >
+    This field is required
+  </Text>
+</View>
+`;

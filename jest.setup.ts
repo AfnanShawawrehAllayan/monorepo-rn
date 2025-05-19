@@ -2,6 +2,11 @@
 import '@testing-library/jest-native/extend-expect';
 import React from 'react';
 
+// Mock Dimensions before anything else
+jest.mock('react-native/Libraries/Utilities/Dimensions', () => ({
+  get: jest.fn().mockReturnValue({ width: 375, height: 812 }),
+}));
+
 // Declare global type for reanimated worklet
 declare global {
   var __reanimatedWorkletInit: jest.Mock;
@@ -26,6 +31,9 @@ jest.mock('react-native', () => {
   const ScrollView = createComponentMock('ScrollView');
 
   return {
+    Dimensions: {
+      get: jest.fn().mockReturnValue({ width: 375, height: 812 }),
+    },
     Platform: {
       OS: 'ios',
       select: jest.fn((obj: any) => obj.ios),

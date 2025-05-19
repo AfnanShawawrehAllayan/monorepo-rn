@@ -7,7 +7,8 @@
   "dependencies": {
     "react": "19.0.0",
     "react-native": "0.79.2",
-    "theme": "workspace:*"
+    "theme": "workspace:*",
+    "hooks": "workspace:*"
   },
   "devDependencies": {
     "@types/react": "^19.0.0",

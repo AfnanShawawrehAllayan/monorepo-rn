@@ -1,0 +1,205 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Component renders correctly with default props 1`] = `
+<View
+  style={
+    [
+      {
+        "borderRadius": 8,
+        "overflow": "hidden",
+      },
+      {
+        "backgroundColor": "#FFFFFF",
+        "borderColor": "transparent",
+        "borderWidth": 0,
+        "elevation": 2,
+        "padding": 16,
+        "shadowColor": "#000",
+        "shadowOffset": {
+          "height": 2,
+          "width": 0,
+        },
+        "shadowOpacity": 0.1,
+        "shadowRadius": 1.6,
+      },
+      undefined,
+    ]
+  }
+>
+  <Text>
+    Card Content
+  </Text>
+</View>
+`;
+
+exports[`Card Component renders with complex content 1`] = `
+<View
+  style={
+    [
+      {
+        "borderRadius": 8,
+        "overflow": "hidden",
+      },
+      {
+        "backgroundColor": "#FFFFFF",
+        "borderColor": "transparent",
+        "borderWidth": 0,
+        "elevation": 2,
+        "padding": 16,
+        "shadowColor": "#000",
+        "shadowOffset": {
+          "height": 2,
+          "width": 0,
+        },
+        "shadowOpacity": 0.1,
+        "shadowRadius": 1.6,
+      },
+      undefined,
+    ]
+  }
+>
+  <View>
+    <Text>
+      Title
+    </Text>
+    <Text>
+      Description
+    </Text>
+    <View>
+      <Text>
+        Nested Content
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Card Component renders with custom elevation 1`] = `
+<View
+  style={
+    [
+      {
+        "borderRadius": 8,
+        "overflow": "hidden",
+      },
+      {
+        "backgroundColor": "#FFFFFF",
+        "borderColor": "transparent",
+        "borderWidth": 0,
+        "elevation": 5,
+        "padding": 16,
+        "shadowColor": "#000",
+        "shadowOffset": {
+          "height": 5,
+          "width": 0,
+        },
+        "shadowOpacity": 0.1,
+        "shadowRadius": 4,
+      },
+      undefined,
+    ]
+  }
+>
+  <Text>
+    Card Content
+  </Text>
+</View>
+`;
+
+exports[`Card Component renders with custom style 1`] = `
+<View
+  style={
+    [
+      {
+        "borderRadius": 8,
+        "overflow": "hidden",
+      },
+      {
+        "backgroundColor": "#FFFFFF",
+        "borderColor": "transparent",
+        "borderWidth": 0,
+        "elevation": 2,
+        "padding": 16,
+        "shadowColor": "#000",
+        "shadowOffset": {
+          "height": 2,
+          "width": 0,
+        },
+        "shadowOpacity": 0.1,
+        "shadowRadius": 1.6,
+      },
+      {
+        "marginTop": 20,
+      },
+    ]
+  }
+>
+  <Text>
+    Card Content
+  </Text>
+</View>
+`;
+
+exports[`Card Component renders with outline 1`] = `
+<View
+  style={
+    [
+      {
+        "borderRadius": 8,
+        "overflow": "hidden",
+      },
+      {
+        "backgroundColor": "#FFFFFF",
+        "borderColor": "#E0E0E0",
+        "borderWidth": 1,
+        "elevation": 2,
+        "padding": 16,
+        "shadowColor": "#000",
+        "shadowOffset": {
+          "height": 2,
+          "width": 0,
+        },
+        "shadowOpacity": 0.1,
+        "shadowRadius": 1.6,
+      },
+      undefined,
+    ]
+  }
+>
+  <Text>
+    Card Content
+  </Text>
+</View>
+`;
+
+exports[`Card Component renders without padding 1`] = `
+<View
+  style={
+    [
+      {
+        "borderRadius": 8,
+        "overflow": "hidden",
+      },
+      {
+        "backgroundColor": "#FFFFFF",
+        "borderColor": "transparent",
+        "borderWidth": 0,
+        "elevation": 2,
+        "padding": 0,
+        "shadowColor": "#000",
+        "shadowOffset": {
+          "height": 2,
+          "width": 0,
+        },
+        "shadowOpacity": 0.1,
+        "shadowRadius": 1.6,
+      },
+      undefined,
+    ]
+  }
+>
+  <Text>
+    Card Content
+  </Text>
+</View>
+`;

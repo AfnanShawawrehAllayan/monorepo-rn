@@ -58,9 +58,29 @@ yarn android
 
 ### Components (`@components`)
 Reusable UI components following modern React Native practices:
-- Button
-- Text
-- [Other components...]
+
+#### Button
+A customizable button component with various variants and sizes.
+
+#### Input
+A flexible text input component with built-in label and error handling.
+
+#### Card
+A container component that provides consistent elevation and styling:
+- Customizable elevation
+- Optional outline variant
+- Configurable padding
+- Shadow support for both iOS and Android
+
+#### Spacer
+A utility component for managing spacing in layouts:
+- Supports both vertical and horizontal spacing
+- Predefined sizes (xs, sm, md, lg, xl, xxl)
+- Custom numeric sizes
+- Responsive scaling
+
+#### Text
+A typography component with theme integration.
 
 ### Theme (`@theme`)
 Consistent theming system across applications:
