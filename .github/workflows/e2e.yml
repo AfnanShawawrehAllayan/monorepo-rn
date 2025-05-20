@@ -14,13 +14,16 @@ jobs:
         working-directory: apps/chatApp
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
           cache: 'yarn'
+
+      - name: Enable Corepack (for yarn@4.9.1)
+        run: corepack enable
 
       - name: Install Dependencies
         run: yarn install
@@ -44,7 +47,7 @@ jobs:
         working-directory: apps/chatApp
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -57,6 +60,9 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '11'
+
+      - name: Enable Corepack (for yarn@4.9.1)
+        run: corepack enable
 
       - name: Install Dependencies
         run: yarn install
