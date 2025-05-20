@@ -29,8 +29,6 @@ jobs:
           # Install and activate yarn 4.9.1
           corepack prepare yarn@4.9.1 --activate
           # Verify yarn version
-          node --eval "require('corepack').prepare('yarn@4.9.1', { activate: true })"
-          # Debug output
           echo "Using yarn from: $(which yarn)"
           echo "Yarn version: $(yarn --version)"
 
@@ -79,8 +77,6 @@ jobs:
           # Install and activate yarn 4.9.1
           corepack prepare yarn@4.9.1 --activate
           # Verify yarn version
-          node --eval "require('corepack').prepare('yarn@4.9.1', { activate: true })"
-          # Debug output
           echo "Using yarn from: $(which yarn)"
           echo "Yarn version: $(yarn --version)"
 
