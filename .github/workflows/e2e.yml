@@ -30,8 +30,6 @@ jobs:
           corepack enable
           # Install and activate yarn 4.9.1
           corepack prepare yarn@4.9.1 --activate
-          # Force yarn to use the corepack version
-          export PATH="$(corepack yarn global bin):$PATH"
           # Debug output
           echo "Using yarn from: $(which yarn)"
           echo "Yarn version: $(yarn --version)"
@@ -39,7 +37,6 @@ jobs:
       - name: Install Dependencies
         env:
           YARN_ENABLE_IMMUTABLE_INSTALLS: false
-          PATH: '$(corepack yarn global bin):$PATH'
         run: yarn install
 
       - name: Install Pods
@@ -49,13 +46,13 @@ jobs:
           cd ..
 
       - name: Build iOS App
-        env:
-          PATH: '$(corepack yarn global bin):$PATH'
-        run: yarn e2e:build:ios
+        run: |
+          # Ensure xcodebuild is available
+          sudo xcode-select -s /Applications/Xcode.app
+          # Build the app
+          yarn e2e:build:ios
 
       - name: Run E2E Tests
-        env:
-          PATH: '$(corepack yarn global bin):$PATH'
         run: yarn e2e:test:ios
 
   test-android:
@@ -87,8 +84,6 @@ jobs:
           corepack enable
           # Install and activate yarn 4.9.1
           corepack prepare yarn@4.9.1 --activate
-          # Force yarn to use the corepack version
-          export PATH="$(corepack yarn global bin):$PATH"
           # Debug output
           echo "Using yarn from: $(which yarn)"
           echo "Yarn version: $(yarn --version)"
@@ -96,15 +91,17 @@ jobs:
       - name: Install Dependencies
         env:
           YARN_ENABLE_IMMUTABLE_INSTALLS: false
-          PATH: '$(corepack yarn global bin):$PATH'
         run: yarn install
 
+      - name: Setup Android Build Tools
+        run: |
+          # Ensure Android SDK tools are in PATH
+          echo "$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools" >> $GITHUB_PATH
+          # Make gradlew executable
+          chmod +x android/gradlew
+
       - name: Build Android App
-        env:
-          PATH: '$(corepack yarn global bin):$PATH'
         run: yarn e2e:build:android
 
       - name: Run E2E Tests
-        env:
-          PATH: '$(corepack yarn global bin):$PATH'
         run: yarn e2e:test:android
