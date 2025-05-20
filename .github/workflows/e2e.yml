@@ -20,21 +20,26 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-          cache: 'yarn'
+          cache: 'npm'
 
       - name: Setup Yarn with Corepack
         run: |
+          # Remove any existing yarn installation
+          rm -rf /Users/runner/.yarn
           # Enable corepack
           corepack enable
           # Install and activate yarn 4.9.1
           corepack prepare yarn@4.9.1 --activate
-          # Verify yarn version
+          # Force yarn to use the corepack version
+          export PATH="$(corepack yarn global bin):$PATH"
+          # Debug output
           echo "Using yarn from: $(which yarn)"
           echo "Yarn version: $(yarn --version)"
 
       - name: Install Dependencies
         env:
           YARN_ENABLE_IMMUTABLE_INSTALLS: false
+          PATH: '$(corepack yarn global bin):$PATH'
         run: yarn install
 
       - name: Install Pods
@@ -44,9 +49,13 @@ jobs:
           cd ..
 
       - name: Build iOS App
+        env:
+          PATH: '$(corepack yarn global bin):$PATH'
         run: yarn e2e:build:ios
 
       - name: Run E2E Tests
+        env:
+          PATH: '$(corepack yarn global bin):$PATH'
         run: yarn e2e:test:ios
 
   test-android:
@@ -62,7 +71,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-          cache: 'yarn'
+          cache: 'npm'
 
       - name: Setup Java
         uses: actions/setup-java@v3
@@ -72,21 +81,30 @@ jobs:
 
       - name: Setup Yarn with Corepack
         run: |
+          # Remove any existing yarn installation
+          rm -rf /Users/runner/.yarn
           # Enable corepack
           corepack enable
           # Install and activate yarn 4.9.1
           corepack prepare yarn@4.9.1 --activate
-          # Verify yarn version
+          # Force yarn to use the corepack version
+          export PATH="$(corepack yarn global bin):$PATH"
+          # Debug output
           echo "Using yarn from: $(which yarn)"
           echo "Yarn version: $(yarn --version)"
 
       - name: Install Dependencies
         env:
           YARN_ENABLE_IMMUTABLE_INSTALLS: false
+          PATH: '$(corepack yarn global bin):$PATH'
         run: yarn install
 
       - name: Build Android App
+        env:
+          PATH: '$(corepack yarn global bin):$PATH'
         run: yarn e2e:build:android
 
       - name: Run E2E Tests
+        env:
+          PATH: '$(corepack yarn global bin):$PATH'
         run: yarn e2e:test:android
