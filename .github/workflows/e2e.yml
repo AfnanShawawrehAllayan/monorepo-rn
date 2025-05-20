@@ -25,8 +25,11 @@ jobs:
       - name: Enable Corepack (for yarn@4.9.1)
         run: corepack enable
 
+      - name: Set Yarn Version (ensure local yarn is 4.9.1)
+        run: corepack yarn set version 4.9.1
+
       - name: Install Dependencies
-        run: yarn install
+        run: corepack yarn install
 
       - name: Install Pods
         run: |
@@ -35,10 +38,10 @@ jobs:
           cd ..
 
       - name: Build iOS App
-        run: yarn e2e:build:ios
+        run: corepack yarn e2e:build:ios
 
       - name: Run E2E Tests
-        run: yarn e2e:test:ios
+        run: corepack yarn e2e:test:ios
 
   test-android:
     runs-on: macos-latest
@@ -64,11 +67,14 @@ jobs:
       - name: Enable Corepack (for yarn@4.9.1)
         run: corepack enable
 
+      - name: Set Yarn Version (ensure local yarn is 4.9.1)
+        run: corepack yarn set version 4.9.1
+
       - name: Install Dependencies
-        run: yarn install
+        run: corepack yarn install
 
       - name: Build Android App
-        run: yarn e2e:build:android
+        run: corepack yarn e2e:build:android
 
       - name: Run E2E Tests
-        run: yarn e2e:test:android
+        run: corepack yarn e2e:test:android
