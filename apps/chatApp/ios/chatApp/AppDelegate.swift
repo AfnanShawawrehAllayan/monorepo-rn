@@ -18,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let factory = RCTReactNativeFactory(delegate: delegate)
     delegate.dependencyProvider = RCTAppDependencyProvider()
 
+    // Enable the New Architecture
+    RCTAppSetupPrepareApp(application, true)
+
     reactNativeDelegate = delegate
     reactNativeFactory = factory
 

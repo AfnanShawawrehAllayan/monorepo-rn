@@ -5,10 +5,10 @@
   "main": "src/index.ts",
   "types": "src/index.ts",
   "dependencies": {
+    "hooks": "workspace:*",
     "react": "19.0.0",
     "react-native": "0.79.2",
-    "theme": "workspace:*",
-    "hooks": "workspace:*"
+    "theme": "workspace:*"
   },
   "devDependencies": {
     "@types/react": "^19.0.0",

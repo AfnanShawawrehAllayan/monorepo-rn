@@ -1,0 +1,68 @@
+name: E2E Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test-ios:
+    runs-on: macos-latest
+    defaults:
+      run:
+        working-directory: apps/chatApp
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'yarn'
+
+      - name: Install Dependencies
+        run: yarn install
+
+      - name: Install Pods
+        run: |
+          cd ios
+          pod install
+          cd ..
+
+      - name: Build iOS App
+        run: yarn e2e:build:ios
+
+      - name: Run E2E Tests
+        run: yarn e2e:test:ios
+
+  test-android:
+    runs-on: macos-latest
+    defaults:
+      run:
+        working-directory: apps/chatApp
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'yarn'
+
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: '11'
+
+      - name: Install Dependencies
+        run: yarn install
+
+      - name: Build Android App
+        run: yarn e2e:build:android
+
+      - name: Run E2E Tests
+        run: yarn e2e:test:android

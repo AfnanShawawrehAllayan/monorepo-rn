@@ -66,7 +66,7 @@ This is one way to run your app — you can also build it directly from Android 
 
 Now that you have successfully run the app, let's make changes!
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
 
 When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
 
@@ -85,6 +85,62 @@ You've successfully run and modified your React Native App. :partying_face:
 # Troubleshooting
 
 If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+
+# End-to-End Testing with Detox
+
+This project uses [Detox](https://wix.github.io/Detox/) for end-to-end (E2E) testing.
+
+## Prerequisites
+
+- Xcode and iOS Simulator (for iOS testing)
+- Node.js, Yarn, and all React Native dependencies installed
+- Metro bundler **must be running** before running Detox tests
+
+## Setup
+
+1. **Install dependencies** (from the project root):
+
+   ```sh
+   yarn install
+   ```
+
+2. **Build the app for Detox** (from the `apps/chatApp` directory):
+
+   ```sh
+   yarn e2e:build:ios
+   ```
+
+3. **Start the Metro bundler** (in a separate terminal, from `apps/chatApp`):
+
+   ```sh
+   yarn start --reset-cache
+   ```
+
+   > **Note:** If you see `EADDRINUSE: address already in use :::8081`, kill the process using:
+   >
+   > ```sh
+   > lsof -i :8081 | grep LISTEN | awk '{print $2}' | xargs kill -9
+   > ```
+
+## Running Tests
+
+With Metro running, in a new terminal (from `apps/chatApp`):
+
+```sh
+yarn e2e:test:ios
+```
+
+## Troubleshooting
+
+- **Metro must be running** before running Detox tests, or you'll see errors about missing script URLs or elements not found.
+- If you get errors about elements not being visible or "not hittable," try:
+  - Adding waits (`await new Promise(res => setTimeout(res, 1000));`) in your test before interacting with elements.
+  - Ensuring the keyboard is dismissed or the view is scrolled to the button you want to tap.
+- If you see `EADDRINUSE` errors, kill the process on port 8081 as shown above.
+- For more verbose Detox logs, run:
+  ```sh
+  yarn e2e:test:ios --loglevel verbose
+  ```
 
 # Learn More
 
