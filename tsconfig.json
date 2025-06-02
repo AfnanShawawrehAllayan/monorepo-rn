@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "module": "commonjs",
-    "lib": ["es2017"],
+    "module": "esnext",
+    "lib": ["es2017", "esnext.asynciterable", "dom"],
     "allowJs": true,
     "jsx": "react-native",
     "noEmit": true,
@@ -15,20 +15,18 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
-      "@chatApp/*": ["apps/chatApp/src/*"],
-      "@socialMediaApp/*": ["apps/socialMediaApp/src/*"],
-      "@components/*": ["packages/components/src/*"],
-      "@theme/*": ["packages/theme/src/*"],
-      "@hooks/*": ["packages/hooks/src/*"],
-      "@i18n/*": ["packages/i18n/src/*"]
-    },
-    "types": ["jest", "node"]
+      "@monorepo/*": ["packages/*/src"],
+      "@components": ["packages/components/src"],
+      "@theme": ["packages/theme/src"],
+      "@hooks": ["packages/hooks/src"],
+      "@i18n": ["packages/i18n/src"]
+    }
   },
-  "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", ".eslintrc.js"],
-  "exclude": [
-    "node_modules",
-    "babel.config.js",
-    "metro.config.js",
-    "jest.config.js"
+  "exclude": ["node_modules"],
+  "include": [
+    "./packages/**/src/**/*.ts",
+    "./packages/**/src/**/*.tsx",
+    "./apps/**/src/**/*.ts",
+    "./apps/**/src/**/*.tsx"
   ]
 }

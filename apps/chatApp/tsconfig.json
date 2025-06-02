@@ -1,3 +1,23 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json"
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react-native",
+    "lib": ["es2017", "esnext.asynciterable", "dom"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@monorepo/*": ["../../packages/*/src"],
+      "@components": ["../../packages/components/src"],
+      "@theme": ["../../packages/theme/src"],
+      "@hooks": ["../../packages/hooks/src"],
+      "@i18n": ["../../packages/i18n/src"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
 }

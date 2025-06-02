@@ -1,24 +1,24 @@
-import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 
-import { ChatListScreen } from '../screens/ChatListScreen';
-import { ChatRoomScreen } from '../screens/ChatRoomScreen';
+import { useAppSelector } from '../store';
 
-export type RootStackParamList = {
-  ChatList: undefined;
-  ChatRoom: { chatId: string };
-};
+import { AuthNavigator } from './AuthStack';
+import { MainNavigator } from './MainStack';
+import { RootStackParamList } from './types';
 
-const Stack = createNativeStackNavigator<RootStackParamList>();
+const RootStack = createNativeStackNavigator<RootStackParamList>();
 
 export const Navigation = (): React.ReactElement => {
+  const { isAuthenticated } = useAppSelector(state => state.auth);
+
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="ChatList" component={ChatListScreen} options={{ title: 'Chats' }} />
-        <Stack.Screen name="ChatRoom" component={ChatRoomScreen} options={{ title: 'Chat' }} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <RootStack.Navigator screenOptions={{ headerShown: false }}>
+      {!isAuthenticated ? (
+        <RootStack.Screen name="Auth" component={AuthNavigator} />
+      ) : (
+        <RootStack.Screen name="Main" component={MainNavigator} />
+      )}
+    </RootStack.Navigator>
   );
 };

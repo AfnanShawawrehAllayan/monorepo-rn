@@ -10,7 +10,7 @@ export const ENV = {
   IS_ANDROID: Platform.OS === 'android',
 
   // API
-  API_URL: __DEV__ ? 'http://localhost:3000' : 'https://api.production.com',
+  API_URL: __DEV__ ? 'http://192.168.8.3:4000' : 'https://api.production.com',
   API_TIMEOUT: 30000,
 
   // Feature Flags

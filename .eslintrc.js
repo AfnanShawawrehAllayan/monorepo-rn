@@ -16,6 +16,7 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
+    project: ['./tsconfig.json', './apps/*/tsconfig.json', './packages/*/tsconfig.json'],
   },
   env: {
     'react-native/react-native': true,
@@ -27,9 +28,21 @@ module.exports = {
       version: 'detect',
     },
     'import/resolver': {
-      typescript: {},
+      typescript: {
+        project: ['./tsconfig.json', './apps/*/tsconfig.json', './packages/*/tsconfig.json'],
+        alwaysTryTypes: true,
+      },
       node: {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+      alias: {
+        map: [
+          ['@components', './packages/components/src'],
+          ['@theme', './packages/theme/src'],
+          ['@hooks', './packages/hooks/src'],
+          ['@i18n', './packages/i18n/src'],
+        ],
+        extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
       },
     },
   },
@@ -49,6 +62,28 @@ module.exports = {
         groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object', 'type'],
         'newlines-between': 'always',
         alphabetize: { order: 'asc', caseInsensitive: true },
+        pathGroups: [
+          {
+            pattern: '@components/**',
+            group: 'internal',
+            position: 'before',
+          },
+          {
+            pattern: '@theme/**',
+            group: 'internal',
+            position: 'before',
+          },
+          {
+            pattern: '@hooks/**',
+            group: 'internal',
+            position: 'before',
+          },
+          {
+            pattern: '@i18n/**',
+            group: 'internal',
+            position: 'before',
+          },
+        ],
       },
     ],
   },
